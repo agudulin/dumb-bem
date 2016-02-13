@@ -1,0 +1,44 @@
+{
+  "name": "dumb-bem",
+  "description": "Simple BEM react components generator",
+  "version": "0.0.1",
+  "keywords": [
+    "react", "bem"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agudulin/dumb-bem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agudulin/dumb-bem/issues"
+  },
+  "homepage": "https://github.com/agudulin/dumb-bem#readme",
+  "dependencies": {
+    "classnames": "^2.2.3"
+  },
+  "devDependencies": {
+    "ava": "^0.9.1",
+    "babel-cli": "^6.3.15",
+    "babel-plugin-transform-object-rest-spread": "^6.5.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.5.0",
+    "expect": "^1.14.0",
+    "expect-jsx": "^2.3.0",
+    "react": "^0.14.7",
+    "react-addons-test-utils": "^0.14.7",
+    "rimraf": "^2.4.3",
+    "standard": "^6.0.5",
+    "transform-props-with": "^0.3.0"
+  },
+  "main": "index.es5.js",
+  "scripts": {
+    "transpile": "babel index.js --out-file index.es5.js",
+    "pretest": "npm run transpile",
+    "test": "standard && ava",
+    "prepush": "npm test",
+    "prepublish": "npm run transpile",
+    "postpublish": "rimraf index.es5.js"
+  },
+  "author": "Alexander Gudulin <alexandr.gudulin@gmail.com> (http://gudulin.com)",
+  "license": "MIT"
+}
