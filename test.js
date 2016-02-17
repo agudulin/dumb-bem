@@ -77,3 +77,20 @@ test('should render `header__title` element', (t) => {
     <h1 className='header__title'>Lorem Ipsum</h1>
   )
 })
+
+test('should render `foo` block with modifiers', (t) => {
+  const renderer = createRenderer()
+
+  const dumbBemFoo = dumbBem('foo')
+  const Foo = tx(dumbBemFoo)('div')
+
+  renderer.render(
+    <Foo active hidden loading />
+  )
+  expect(
+    renderer.getRenderOutput()
+  )
+  .toEqualJSX(
+    <div className='foo is-active is-hidden is-loading' />
+  )
+})

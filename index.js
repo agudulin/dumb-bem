@@ -5,6 +5,7 @@ const makeBlockStyles = ({
   block,
   className,
   hidden,
+  loading,
   modifier,
   ...props
 }) => ({
@@ -12,7 +13,8 @@ const makeBlockStyles = ({
     [`${block}--${modifier}`]: block && modifier,
     [`${className}`]: className,
     'is-active': active,
-    'is-hidden': hidden
+    'is-hidden': hidden,
+    'is-loading': loading
   }),
   ...props
 })
