@@ -18,17 +18,17 @@
   },
   "devDependencies": {
     "ava": "^0.9.1",
-    "babel-cli": "^6.3.15",
+    "babel-cli": "^6.5.1",
     "babel-plugin-transform-object-rest-spread": "^6.5.0",
-    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "expect": "^1.14.0",
     "expect-jsx": "^2.3.0",
     "react": "^0.14.7",
     "react-addons-test-utils": "^0.14.7",
-    "rimraf": "^2.4.3",
+    "rimraf": "^2.5.2",
     "standard": "^6.0.5",
-    "transform-props-with": "^0.3.0"
+    "transform-props-with": "^1.0.0-rc.0"
   },
   "main": "index.es5.js",
   "scripts": {
