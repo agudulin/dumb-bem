@@ -9,17 +9,20 @@ const makeBlockStyles = ({
   loading,
   modifier,
   ...props
-}) => ({
-  className: cx(block, {
-    [`${block}--${modifier}`]: block && modifier,
-    [`${className}`]: className,
-    'is-active': active,
-    'is-disabled': disabled,
-    'is-hidden': hidden,
-    'is-loading': loading
-  }),
-  ...props
-})
+}) => {
+  const modifiers = (block && modifier) ? modifier.split(/\s/).map((item) => (`${block}--${item}`)).join(' ') : false
+
+  return ({
+    className: cx(block, modifiers, {
+      [`${className}`]: className,
+      'is-active': active,
+      'is-disabled': disabled,
+      'is-hidden': hidden,
+      'is-loading': loading
+    }),
+    ...props
+  })
+}
 
 export default (block) => ({ element, ...props }) => {
   if (element) {

@@ -44,6 +44,23 @@ test('should render `header` block with modifier', (t) => {
   )
 })
 
+test('should render `header` block with multiple modifiers', (t) => {
+  const renderer = createRenderer()
+
+  const dumbBemHeader = dumbBem('header')
+  const Header = tx(dumbBemHeader)('header')
+
+  renderer.render(
+    <Header modifier='landing landing-seo' />
+  )
+  expect(
+    renderer.getRenderOutput()
+  )
+  .toEqualJSX(
+    <header className='header header--landing header--landing-seo' />
+  )
+})
+
 test('should render `header` block with modifier and custom className', (t) => {
   const renderer = createRenderer()
 
@@ -58,6 +75,23 @@ test('should render `header` block with modifier and custom className', (t) => {
   )
   .toEqualJSX(
     <header className='header header--landing js-header' />
+  )
+})
+
+test('should render `header` block with multiple modifiers and custom className', (t) => {
+  const renderer = createRenderer()
+
+  const dumbBemHeader = dumbBem('header')
+  const Header = tx(dumbBemHeader)('header')
+
+  renderer.render(
+    <Header modifier='landing landing-seo' className='js-header' />
+  )
+  expect(
+    renderer.getRenderOutput()
+  )
+  .toEqualJSX(
+    <header className='header header--landing header--landing-seo js-header' />
   )
 })
 
