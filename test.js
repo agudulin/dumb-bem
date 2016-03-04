@@ -85,12 +85,12 @@ test('should render `foo` block with modifiers', (t) => {
   const Foo = tx(dumbBemFoo)('div')
 
   renderer.render(
-    <Foo active hidden loading />
+    <Foo active disabled hidden loading />
   )
   expect(
     renderer.getRenderOutput()
   )
   .toEqualJSX(
-    <div className='foo is-active is-hidden is-loading' />
+    <div className='foo is-active is-disabled is-hidden is-loading' />
   )
 })
