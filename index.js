@@ -1,8 +1,7 @@
 import cx from 'classnames'
 
-const makeBlockStyles = ({
+const makeBlockStyles = (block, {
   active,
-  block,
   className,
   disabled,
   hidden,
@@ -10,7 +9,7 @@ const makeBlockStyles = ({
   modifier,
   ...props
 }) => {
-  const modifiers = (block && modifier) ? modifier.split(/\s/).map((item) => (`${block}--${item}`)).join(' ') : false
+  const modifiers = modifier && modifier.split(/\s+/).map((item) => `${block}--${item}`)
   const states = {
     'is-active': active,
     'is-disabled': disabled,
@@ -25,8 +24,7 @@ const makeBlockStyles = ({
 }
 
 export default (block) => ({ element, ...props }) => {
-  if (element) {
-    return makeBlockStyles({ block: `${block}__${element}`, ...props })
-  }
-  return makeBlockStyles({ block, ...props })
+  const blockName = (element ? `${block}__${element}` : block)
+
+  return makeBlockStyles(blockName, props)
 }
