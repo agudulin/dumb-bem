@@ -51,13 +51,13 @@ test('should render `header` block with multiple modifiers', (t) => {
   const Header = tx(dumbBemHeader)('header')
 
   renderer.render(
-    <Header modifier='landing landing-seo' />
+    <Header modifier='landing landing-seo   top' />
   )
   expect(
     renderer.getRenderOutput()
   )
   .toEqualJSX(
-    <header className='header header--landing header--landing-seo' />
+    <header className='header header--landing header--landing-seo header--top' />
   )
 })
 
