@@ -1,32 +1,26 @@
 import cx from 'classnames'
 
-const makeBlockStyles = ({
-  active,
-  block,
-  className,
-  disabled,
-  hidden,
-  loading,
-  modifier,
-  ...props
-}) => {
-  const modifiers = (block && modifier) ? modifier.split(/\s/).map((item) => (`${block}--${item}`)).join(' ') : false
-  const states = {
-    'is-active': active,
-    'is-disabled': disabled,
-    'is-hidden': hidden,
-    'is-loading': loading
-  }
+const makeBlock = (block) => block
 
-  return {
-    className: cx(block, modifiers, className, states),
-    ...props
-  }
-}
+const makeOriginalClass = (_, { className }) => className
 
-export default (block) => ({ element, ...props }) => {
-  if (element) {
-    return makeBlockStyles({ block: `${block}__${element}`, ...props })
-  }
-  return makeBlockStyles({ block, ...props })
+const makeModifiers = (block, { modifier }) =>
+  modifier && modifier.split(/\s+/).map((item) => `${block}--${item}`)
+
+const makeStates = (_, props) =>
+  ['active', 'disabled', 'hidden', 'loading']
+    .filter((s) => props[s])
+    .map((s) => `is-${s}`)
+
+const basicMakers = [makeBlock, makeOriginalClass, makeModifiers, makeStates]
+
+export default (block, extraMakers = []) => (props) => {
+  const { element } = props
+  const blockName = block + (element ? `__${element}` : '')
+
+  const makers = basicMakers
+    .concat(extraMakers)
+    .map((maker) => maker(blockName, props))
+
+  return { ...props, className: cx(makers) }
 }
