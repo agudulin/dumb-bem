@@ -5,7 +5,7 @@ const makeBlock = (block) => block
 const makeOriginalClass = (_, { className }) => className
 
 const makeModifiers = (block, { modifier }) =>
-modifier && modifier.split(/\s+/).map((item) => `${block}--${item}`)
+  modifier && modifier.split(/\s+/).map((item) => `${block}--${item}`)
 
 const makeStates = (_, props) =>
   ['active', 'disabled', 'hidden', 'loading']
