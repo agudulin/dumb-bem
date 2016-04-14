@@ -1,16 +1,9 @@
 import cx from 'classnames'
 
-const makeBlock = (block) => block
-
-const makeOriginalClass = (_, { className }) => className
-
-const makeModifiers = (block, { modifier }) =>
-  modifier && modifier.split(/\s+/).map((item) => `${block}--${item}`)
-
-const makeStates = (_, props) =>
-  ['active', 'disabled', 'hidden', 'loading']
-    .filter((s) => props[s])
-    .map((s) => `is-${s}`)
+import makeBlock from './makers/makeBlock'
+import makeModifiers from './makers/makeModifiers'
+import makeOriginalClass from './makers/makeOriginalClass'
+import makeStates from './makers/makeStates'
 
 const basicMakers = [makeBlock, makeOriginalClass, makeModifiers, makeStates]
 
