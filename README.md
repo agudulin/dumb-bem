@@ -38,6 +38,7 @@ ReactDOM.render(
 
   - `block` (*String*): name of the base block.
   - [`extraMakers`] \(*Array*): array of functions for adding new class names
+
   Maker function takes `block` and `props` as arguments and should return anything suitable for [classnames](https://www.npmjs.com/package/classnames) input. E.g. [it can be a string, array of string or object](https://github.com/JedWatson/classnames#usage).
 
 #### Returns
