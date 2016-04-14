@@ -25,6 +25,7 @@
     "babel-preset-react": "^6.5.0",
     "expect": "^1.14.0",
     "expect-jsx": "^2.3.0",
+    "jsdoc-to-markdown": "^1.3.3",
     "react": "^0.14.7",
     "react-addons-test-utils": "^0.14.7",
     "rimraf": "^2.5.2",
@@ -33,6 +34,7 @@
   },
   "main": "lib/",
   "scripts": {
+    "docs": "jsdoc2md src/makers/*.js > docs/makers.md",
     "transpile": "babel src -d lib",
     "pretest": "npm run transpile",
     "test": "standard && ava",
