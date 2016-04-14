@@ -1,9 +1,12 @@
-# dumb-bem
+# Dumb BEM
 
-[![Build Status][travis-image]][travis-url]
-[![npm](https://img.shields.io/npm/v/dumb-bem.svg)](https://www.npmjs.com/package/dumb-bem)
+**Dumb BEM** is a simple BEM class name [transformation](https://github.com/robinpokorny/transform-props-with) for React components.
 
-> Simple BEM react components generator
+[![npm](https://img.shields.io/npm/v/dumb-bem.svg?style=flat-square)](https://www.npmjs.com/package/dumb-bem)
+[![Build Status](https://img.shields.io/travis/agudulin/dumb-bem/master.svg?style=flat-square)](https://travis-ci.org/agudulin/dumb-bem)
+[![license](https://img.shields.io/npm/l/dumb-bem.svg?style=flat-square)](https://github.com/agudulin/dumb-bem/blob/master/license)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-lightgrey.svg?style=flat-square)](http://standardjs.com/)
+[![Developed at Wimdu](https://img.shields.io/badge/developed%20at-Wimdu-orange.svg?style=flat-square)](http://tech.wimdu.com/)
 
 ## Install
 
