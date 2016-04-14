@@ -41,5 +41,9 @@
     "postpublish": "rimraf index.es5.js"
   },
   "author": "Alexander Gudulin <alexandr.gudulin@gmail.com> (http://gudulin.com)",
+  "contributors": [
+    "Robin Pokorny <me@robinpokorny.com> (http://robinpokorny.com)",
+    "Rafal Bromirski <rafal.bromirski@gmail.com> (http://www.rafalbromirski.com)"
+  ],
   "license": "MIT"
 }
