@@ -34,7 +34,7 @@
   },
   "main": "lib/",
   "scripts": {
-    "docs": "jsdoc2md src/makers/*.js > docs/makers.md",
+    "docs": "jsdoc2md --module-index-format grouped src/makers/*.js > docs/makers.md",
     "transpile": "babel src -d lib",
     "pretest": "npm run transpile",
     "test": "standard && ava",

@@ -1,31 +1,9 @@
 ## Modules
 
-<dl>
-<dt><a href="#module_makeBlock">makeBlock</a></dt>
-<dd><p>Preserve <code>className</code> as it was passed.
-Without this maker the original class would be lost.
-This maker is independent of the value of passed props.</p>
-<p><em>This maker is always applied.</em></p>
-</dd>
-<dt><a href="#module_makeModifiers">makeModifiers</a></dt>
-<dd><p>Preserve <code>className</code> as it was passed.
-Without this maker the original class would be lost.</p>
-<p><em>This maker is always applied.</em></p>
-</dd>
-<dt><a href="#module_makeOriginalClass">makeOriginalClass</a></dt>
-<dd><p>Preserve <code>className</code> as it was passed.
-Without this maker the original class would be lost.
-This maker is independent of the value of <code>block</code>.</p>
-<p><em>This maker is always applied.</em></p>
-</dd>
-<dt><a href="#module_makeStates">makeStates</a></dt>
-<dd><p>Create SMACSS style state rules.
-If the correspondent props value is truthy,
-class with <code>is-</code> prefix will be added.
-Supports <code>active</code>, <code>disabled</code>, <code>hidden</code>, and <code>loading</code>.
-This maker is independent of the value of <code>block</code>.</p>
-</dd>
-</dl>
+* [makeBlock](#module_makeBlock)
+* [makeModifiers](#module_makeModifiers)
+* [makeOriginalClass](#module_makeOriginalClass)
+* [makeStates](#module_makeStates)
 
 <a name="module_makeBlock"></a>
 
