@@ -31,9 +31,9 @@
     "standard": "^6.0.5",
     "transform-props-with": "^1.0.0-rc.0"
   },
-  "main": "index.es5.js",
+  "main": "lib/",
   "scripts": {
-    "transpile": "babel index.js --out-file index.es5.js",
+    "transpile": "babel src -d lib",
     "pretest": "npm run transpile",
     "test": "standard && ava",
     "prepush": "npm test",
