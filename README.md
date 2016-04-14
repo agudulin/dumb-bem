@@ -1,4 +1,7 @@
-# dumb-bem [![Build Status][travis-image]][travis-url]
+# dumb-bem
+
+[![Build Status][travis-image]][travis-url]
+[![npm](https://img.shields.io/npm/v/dumb-bem.svg)](https://www.npmjs.com/package/dumb-bem)
 
 > Simple BEM react components generator
 
