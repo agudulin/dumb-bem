@@ -5,6 +5,7 @@
  *
  * Preserve `className` as it was passed.
  * Without this maker the original class would be lost.
+ *
  * This maker is independent of the value of `block`.
  *
  * *This maker is always applied.*

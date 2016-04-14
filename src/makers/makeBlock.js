@@ -3,8 +3,8 @@
  *
  * @description
  *
- * Preserve `className` as it was passed.
- * Without this maker the original class would be lost.
+ * Add the main class for the block.
+ *
  * This maker is independent of the value of passed props.
  *
  * *This maker is always applied.*
@@ -13,8 +13,11 @@
  *
  * import makeBlock from 'dumb-bem/makers/makeBlock';
  *
- * makeBlock('block', { });
+ * makeBlock('block', {});
  *   // => 'block'
+ *
+ * makeBlock('block__element', {});
+ *   // => 'block__element'
  *
  */
 export default (block, _) => block

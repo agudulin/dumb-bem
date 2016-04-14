@@ -8,8 +8,8 @@
 <a name="module_makeBlock"></a>
 
 ## makeBlock
-Preserve `className` as it was passed.
-Without this maker the original class would be lost.
+Add the main class for the block.
+
 This maker is independent of the value of passed props.
 
 *This maker is always applied.*
@@ -18,14 +18,18 @@ This maker is independent of the value of passed props.
 ```js
 import makeBlock from 'dumb-bem/makers/makeBlock';
 
-makeBlock('block', { });
+makeBlock('block', {});
   // => 'block'
+
+makeBlock('block__element', {});
+  // => 'block__element'
 ```
 <a name="module_makeModifiers"></a>
 
 ## makeModifiers
-Preserve `className` as it was passed.
-Without this maker the original class would be lost.
+Add one or more modifiers to the base block name.
+
+Separate multiple modifiers by whitespace.
 
 *This maker is always applied.*
 
@@ -44,6 +48,7 @@ makeModifiers('block', { modifier: 'large success' });
 ## makeOriginalClass
 Preserve `className` as it was passed.
 Without this maker the original class would be lost.
+
 This maker is independent of the value of `block`.
 
 *This maker is always applied.*
@@ -61,7 +66,9 @@ makeOriginalClass('block', { className: 'btn btn-lg btn-success' });
 Create SMACSS style state rules.
 If the correspondent props value is truthy,
 class with `is-` prefix will be added.
+
 Supports `active`, `disabled`, `hidden`, and `loading`.
+
 This maker is independent of the value of `block`.
 
 **Example**

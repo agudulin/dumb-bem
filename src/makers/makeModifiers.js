@@ -3,8 +3,9 @@
  *
  * @description
  *
- * Preserve `className` as it was passed.
- * Without this maker the original class would be lost.
+ * Add one or more modifiers to the base block name.
+ *
+ * Separate multiple modifiers by whitespace.
  *
  * *This maker is always applied.*
  *

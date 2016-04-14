@@ -6,7 +6,9 @@
  * Create SMACSS style state rules.
  * If the correspondent props value is truthy,
  * class with `is-` prefix will be added.
+ *
  * Supports `active`, `disabled`, `hidden`, and `loading`.
+ *
  * This maker is independent of the value of `block`.
  *
  * @example
