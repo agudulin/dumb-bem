@@ -43,9 +43,12 @@ ReactDOM.render(
 #### Arguments
 
   - `block` (*String*): name of the base block.
-  - [`extraMakers`] \(*Array*): array of functions for adding new class names
+  - [`extraMakers`] \(*Array*):
+  array of functions for adding new class names.
 
   Maker function takes `block` and `props` as arguments and should return anything suitable for [classnames](https://www.npmjs.com/package/classnames) input. E.g. [it can be a string, array of string or object](https://github.com/JedWatson/classnames#usage).
+
+  See also [built-in makers](docs/makers.md).
 
 #### Returns
 
@@ -60,7 +63,7 @@ A function which takes `props` object as a parameter, transforms `className` pro
 
 #### Examples
 
-**Maker function**
+**User maker function**
 
 ```js
 const makeColorModifier = (block, props) => {
@@ -85,6 +88,9 @@ ReactDOM.render(
 //   <li class='list__item list__item--white'>Item 2</li>
 // </ul>
 ```
+
+### [Built-in Makers](docs/makers.md)
+
 
 ## License
 

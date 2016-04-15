@@ -38,7 +38,7 @@
     "transpile": "babel src -d lib",
     "pretest": "npm run transpile",
     "test": "standard && ava",
-    "prepush": "npm test",
+    "prepush": "npm test && npm run docs",
     "prepublish": "npm run transpile",
     "postpublish": "rimraf index.es5.js"
   },

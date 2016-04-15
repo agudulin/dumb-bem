@@ -11,6 +11,8 @@
  *
  * This maker is independent of the value of `block`.
  *
+ * *This maker is always applied.*
+ *
  * @example
  *
  * import makeStates from 'dumb-bem/makers/makeStates';
@@ -19,14 +21,6 @@
  *   // => 'is-active'
  * makeStates('block', { active: 0, disabled: 1 });
  *   // => 'is-disabled'
- *
- *
- * @example
- *
- * import dumbBem from 'dumb-bem';
- * import makeStates from 'dumb-bem/makers/makeStates';
- *
- * const dumbHeader = dumbBem('header', [makeStates])
  *
  */
 export default (_, props) =>

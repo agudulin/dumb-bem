@@ -71,6 +71,8 @@ Supports `active`, `disabled`, `hidden`, and `loading`.
 
 This maker is independent of the value of `block`.
 
+*This maker is always applied.*
+
 **Example**
 ```js
 import makeStates from 'dumb-bem/makers/makeStates';
@@ -79,11 +81,4 @@ makeStates('block', { active: true });
   // => 'is-active'
 makeStates('block', { active: 0, disabled: 1 });
   // => 'is-disabled'
-```
-**Example**
-```js
-import dumbBem from 'dumb-bem';
-import makeStates from 'dumb-bem/makers/makeStates';
-
-const dumbHeader = dumbBem('header', [makeStates])
 ```
