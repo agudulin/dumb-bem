@@ -6,7 +6,7 @@ import React from 'react'
 import { createRenderer } from 'react-addons-test-utils'
 import tx from 'transform-props-with'
 
-import dumbBem from './index.es5'
+import dumbBem from '../'
 
 expect.extend(expectJSX)
 
