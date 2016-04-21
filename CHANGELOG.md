@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 
 ## Unreleased - 2016-xx-xx
 ### Break into makers
-- Change project structure; intorduce `src/`, `test/`, and `lib/` directories. (`lib/` for npm publish only.)
+- Change project structure; introduce `src/`, `test/`, and `lib/` directories. (`lib/` for npm publish only.)
 - Extract makers to individual files inside `src/makers/` directory.
 - Add makers documentation.
 
