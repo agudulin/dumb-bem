@@ -14,7 +14,7 @@ This maker is independent of the value of passed props.
 
 *This maker is always applied.*
 
-**Example**
+**Example**  
 ```js
 import makeBlock from 'dumb-bem/makers/makeBlock';
 
@@ -33,7 +33,7 @@ Separate multiple modifiers by whitespace.
 
 *This maker is always applied.*
 
-**Example**
+**Example**  
 ```js
 import makeModifiers from 'dumb-bem/makers/makeModifiers';
 
@@ -53,7 +53,7 @@ This maker is independent of the value of `block`.
 
 *This maker is always applied.*
 
-**Example**
+**Example**  
 ```js
 import makeOriginalClass from 'dumb-bem/makers/makeOriginalClass';
 
@@ -73,7 +73,7 @@ This maker is independent of the value of `block`.
 
 *This maker is always applied.*
 
-**Example**
+**Example**  
 ```js
 import makeStates from 'dumb-bem/makers/makeStates';
 
