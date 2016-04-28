@@ -68,7 +68,7 @@ A function which takes `props` object as a parameter, transforms `className` pro
 ```js
 const makeColorModifier = (block, props) => {
   if (props.color) {
-    return `${block}--${color}`
+    return `${block}--${props.color}`
   }
 }
 
