@@ -22,7 +22,7 @@ import tx from 'transform-props-with'
 
 const dumbHeader = dumbBem('header')
 const Header = tx(dumbHeader)('div')
-const HeaderTitle = tx([dumbHeader, { element: 'title' }])('h1')
+const HeaderTitle = tx([{ element: 'title' }, dumbHeader])('h1')
 
 ReactDOM.render(
   <Header modifier='landing'>
@@ -74,7 +74,7 @@ const makeColorModifier = (block, props) => {
 
 const dumbList = dumbBem('list', [makeColorModifier])
 const List = tx(dumbList)('ul')
-const ListItem = tx([dumbList, { element: 'item' }])('li')
+const ListItem = tx([{ element: 'item' }, dumbList])('li')
 
 ReactDOM.render(
   <List>
