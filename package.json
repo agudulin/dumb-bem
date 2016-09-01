@@ -32,6 +32,9 @@
     "standard": "^7.1.2",
     "transform-props-with": "^2.0.0"
   },
+  "peerDependencies": {
+    "transform-props-with": "^2.0.0"
+  },
   "main": "lib/",
   "scripts": {
     "docs": "jsdoc2md --module-index-format grouped src/makers/*.js > docs/makers.md",
