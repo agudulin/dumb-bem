@@ -20,13 +20,13 @@ test('should return `header` block', (t) => {
   const Header = tx(dumbBemHeader)('header')
 
   renderer.render(
-    <Header />
+    React.createElement(Header, null)
   )
   expect(
     renderer.getRenderOutput()
   )
   .toEqualJSX(
-    <header className='header ' />
+    React.createElement('header', { className: 'header ' })
   )
 })
 
