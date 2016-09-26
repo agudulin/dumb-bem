@@ -7,7 +7,8 @@ import makeStates from './makers/makeStates'
 
 const basicMakers = [makeBlock, makeOriginalClass, makeModifiers, makeStates]
 
-export default (block, extraMakers = []) => (props) => {
+export default (block, options = {}) => (props) => {
+  const { extraMakers = [] } = options
   const { element } = props
   const blockName = block + (element ? `__${element}` : '')
 
