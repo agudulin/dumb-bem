@@ -23,7 +23,9 @@
  *   // => 'is-disabled'
  *
  */
-export default (_, props) =>
+export const makeStates = (_, props) =>
   ['active', 'disabled', 'hidden', 'loading']
     .filter((s) => props[s])
     .map((s) => `is-${s}`)
+
+export const unknownPropsStates = ['active', 'loading']

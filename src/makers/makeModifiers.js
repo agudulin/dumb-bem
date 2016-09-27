@@ -20,5 +20,7 @@
  *   // => 'block--large block--success'
  *
  */
-export default (block, { modifier }) =>
+export const makeModifiers = (block, { modifier }) =>
   modifier && modifier.split(/\s+/).map((item) => `${block}--${item}`)
+
+export const unknownPropsModifiers = ['modifier']
