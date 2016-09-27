@@ -44,10 +44,14 @@ ReactDOM.render(
 
   - `block` (*String*): name of the base block.
   - `options` (*Object*): Override default options.
-    - [`extraMakers`] \(*Array*):
-    array of functions for adding new class names.
+    - [`plugins`] \(*Array*):
+    array of plugins for modifying class names.
 
-      Maker function takes `block` and `props` as arguments and should return anything suitable for [classnames](https://www.npmjs.com/package/classnames) input. E.g. [it can be a string, array of string or object](https://github.com/JedWatson/classnames#usage).
+      Plugin is an object with two properties:
+        - `maker` (*function*)
+        Maker function takes `block` and `props` as arguments and should return anything suitable for [classnames](https://www.npmjs.com/package/classnames) input. E.g. [it can be a string, array of string or object](https://github.com/JedWatson/classnames#usage).
+        - `propsToRemove` (*Array*)
+        An array of properties which are used in the plugin but should not be injected into the corresponding DOM element in the end.
 
       See also [built-in makers](docs/makers.md).
 
@@ -67,13 +71,16 @@ A function which takes `props` object as a parameter, transforms `className` pro
 **User maker function**
 
 ```js
-const makeColorModifier = (block, props) => {
-  if (props.color) {
-    return `${block}--${props.color}`
-  }
+const colorModifierPlugin = {
+  maker: (block, props) => {
+    if (props.color) {
+      return `${block}--${props.color}`
+    }
+  },
+  propsToRemove: ['color']
 }
 
-const dumbList = dumbBem('list', [makeColorModifier])
+const dumbList = dumbBem('list', { plugins: [colorModifierPlugin] })
 const List = tx(dumbList)('ul')
 const ListItem = tx([{ element: 'item' }, dumbList])('li')
 
