@@ -17,17 +17,17 @@
  *
  * import * as pluginStates from 'dumb-bem/plugins/makeStates'
  *
- * pluginStates.maker('block', { active: true })
+ * pluginStates.maker('block', { active: true }, {})
  *   // => 'is-active'
  *
- * pluginStates.maker('block', { active: 0, disabled: 1 })
+ * pluginStates.maker('block', { active: 0, disabled: 1 }, {})
  *   // => 'is-disabled'
  *
  * pluginStates.propsToRemove
  *   // => ['active', 'loading']
  *
  */
-export const maker = (_, props) =>
+export const maker = (_block, props, _options) =>
   ['active', 'disabled', 'hidden', 'loading']
     .filter((s) => props[s])
     .map((s) => `is-${s}`)

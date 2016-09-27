@@ -20,4 +20,4 @@
  *   // => 'block__element'
  *
  */
-export const maker = (block, _) => block
+export const maker = (block, _props, _options) => block
