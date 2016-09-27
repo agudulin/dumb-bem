@@ -13,17 +13,17 @@
  *
  * import * as pluginModifiers from 'dumb-bem/plugins/makeModifiers'
  *
- * pluginModifiers.maker('block', { modifier: 'large' }, { delimeter: { modifier: '--' } })
+ * pluginModifiers.maker('block', { modifier: 'large' }, { delimiters: { modifier: '--' } })
  *   // => 'block--large'
  *
- * pluginModifiers.maker('block', { modifier: 'large success' }, { delimeter: { modifier: '_' } })
+ * pluginModifiers.maker('block', { modifier: 'large success' }, { delimiters: { modifier: '_' } })
  *   // => 'block_large block_success'
  *
  * pluginModifiers.propsToRemove
  *   // => ['modifier']
  *
  */
-export const maker = (block, { modifier }, { delimeter }) =>
-  modifier && modifier.split(/\s+/).map((item) => `${block}${delimeter.modifier}${item}`)
+export const maker = (block, { modifier }, { delimiters }) =>
+  modifier && modifier.split(/\s+/).map((item) => `${block}${delimiters.modifier}${item}`)
 
 export const propsToRemove = ['modifier']

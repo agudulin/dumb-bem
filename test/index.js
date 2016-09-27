@@ -52,9 +52,9 @@ test('should render `header` block with modifier', (t) => {
   )
 })
 
-test('should render `header` block with custom delimeters', (t) => {
+test('should render `header` block with custom delimiterss', (t) => {
   const dumbHeader = dumbBem('header', {
-    delimeter: {
+    delimiters: {
       element: '🐶',
       modifier: '🐱'
     }
