@@ -20,7 +20,7 @@
  *   // => 'block--large block--success'
  *
  */
-export const makeModifiers = (block, { modifier }) =>
+export const maker = (block, { modifier }) =>
   modifier && modifier.split(/\s+/).map((item) => `${block}--${item}`)
 
-export const unknownPropsModifiers = ['modifier']
+export const propsToRemove = ['modifier']

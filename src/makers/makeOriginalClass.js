@@ -18,4 +18,4 @@
  *   // => 'btn btn-lg btn-success'
  *
  */
-export default (_, { className }) => className
+export const maker = (_, { className }) => className

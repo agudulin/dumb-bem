@@ -15,7 +15,10 @@ const justClass = (props) => dumbHeader(props).className.trim()
 
 test('should cleanup unknown properties', (t) => {
   const dumbHeader = dumbBem('header', {
-    unknownProps: ['invisible']
+    plugins: [{
+      maker: (_, { invisible }) => invisible && 'is-invisible',
+      propsToRemove: ['invisible']
+    }]
   })
   const props = dumbHeader({ active: true, loading: true, modifier: 'landing' })
 
@@ -59,14 +62,14 @@ test('should return `header` block with multiple modifiers', (t) => {
 test('should return `header` block with modifier and custom className', (t) => {
   t.is(
     justClass({ modifier: 'landing', className: 'js-header' }),
-    'header js-header header--landing'
+    'header header--landing js-header'
   )
 })
 
 test('should return `header` block with multiple modifiers and custom className', (t) => {
   t.is(
     justClass({ modifier: 'landing landing-seo', className: 'js-header' }),
-    'header js-header header--landing header--landing-seo'
+    'header header--landing header--landing-seo js-header'
   )
 })
 

@@ -1,12 +1,11 @@
 import cx from 'classnames'
 
-import makeBlock from './makers/makeBlock'
-import { unknownPropsModifiers, makeModifiers } from './makers/makeModifiers'
-import makeOriginalClass from './makers/makeOriginalClass'
-import { unknownPropsStates, makeStates } from './makers/makeStates'
+import * as pluginBlock from './makers/makeBlock'
+import * as pluginModifiers from './makers/makeModifiers'
+import * as pluginOriginalClass from './makers/makeOriginalClass'
+import * as pluginStates from './makers/makeStates'
 
-const basicMakers = [makeBlock, makeOriginalClass, makeModifiers, makeStates]
-const basicUnknownProps = [unknownPropsModifiers, unknownPropsStates]
+const basicPlugins = [pluginBlock, pluginModifiers, pluginOriginalClass, pluginStates]
 
 const filterProps = (props, unknownProps) => {
   const keys = Object.keys(props).filter(prop => unknownProps.indexOf(prop) < 0)
@@ -15,15 +14,15 @@ const filterProps = (props, unknownProps) => {
 }
 
 export default (block, options = {}) => (props) => {
-  const { extraMakers = [], unknownProps = [] } = options
+  const { extraPlugins = [] } = options
   const { element, ...restProps } = props
   const blockName = block + (element ? `__${element}` : '')
 
-  const makers = basicMakers
-    .concat(extraMakers)
-    .map((maker) => maker(blockName, props))
+  const plugins = basicPlugins.concat(extraPlugins)
 
-  const knownProps = filterProps(restProps, basicUnknownProps.concat(unknownProps))
+  const makers = plugins.map(plugin => plugin.maker(blockName, props))
+  const propsToRemove = plugins.map(plugin => plugin.propsToRemove)
+  const knownProps = filterProps(restProps, propsToRemove)
 
   return { ...knownProps, className: cx(makers) }
 }

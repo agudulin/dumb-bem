@@ -23,9 +23,9 @@
  *   // => 'is-disabled'
  *
  */
-export const makeStates = (_, props) =>
+export const maker = (_, props) =>
   ['active', 'disabled', 'hidden', 'loading']
     .filter((s) => props[s])
     .map((s) => `is-${s}`)
 
-export const unknownPropsStates = ['active', 'loading']
+export const propsToRemove = ['active', 'loading']
