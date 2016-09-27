@@ -11,7 +11,7 @@
  *
  * @example
  *
- * import makeModifiers from 'dumb-bem/makers/makeModifiers';
+ * import makeModifiers from 'dumb-bem/plugins/makeModifiers';
  *
  * makeModifiers('block', { modifier: 'large' });
  *   // => 'block--large'

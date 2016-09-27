@@ -53,7 +53,7 @@ ReactDOM.render(
         - `propsToRemove` (*Array*)
         An array of properties which are used in the plugin but should not be injected into the corresponding DOM element in the end.
 
-      See also [built-in makers](docs/makers.md).
+      See also [built-in makers](docs/plugins.md).
 
 #### Returns
 

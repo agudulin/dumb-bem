@@ -1,9 +1,9 @@
 import cx from 'classnames'
 
-import * as pluginBlock from './makers/makeBlock'
-import * as pluginModifiers from './makers/makeModifiers'
-import * as pluginOriginalClass from './makers/makeOriginalClass'
-import * as pluginStates from './makers/makeStates'
+import * as pluginBlock from './plugins/makeBlock'
+import * as pluginModifiers from './plugins/makeModifiers'
+import * as pluginOriginalClass from './plugins/makeOriginalClass'
+import * as pluginStates from './plugins/makeStates'
 
 import filterObject from './filter-object'
 

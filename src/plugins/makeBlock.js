@@ -11,7 +11,7 @@
  *
  * @example
  *
- * import makeBlock from 'dumb-bem/makers/makeBlock';
+ * import makeBlock from 'dumb-bem/plugins/makeBlock';
  *
  * makeBlock('block', {});
  *   // => 'block'

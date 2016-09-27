@@ -15,7 +15,7 @@
  *
  * @example
  *
- * import makeStates from 'dumb-bem/makers/makeStates';
+ * import makeStates from 'dumb-bem/plugins/makeStates';
  *
  * makeStates('block', { active: true });
  *   // => 'is-active'
