@@ -15,12 +15,16 @@
  *
  * @example
  *
- * import makeStates from 'dumb-bem/plugins/makeStates';
+ * import * as pluginStates from 'dumb-bem/plugins/makeStates'
  *
- * makeStates('block', { active: true });
+ * pluginStates.maker('block', { active: true })
  *   // => 'is-active'
- * makeStates('block', { active: 0, disabled: 1 });
+ *
+ * pluginStates.maker('block', { active: 0, disabled: 1 })
  *   // => 'is-disabled'
+ *
+ * pluginStates.propsToRemove
+ *   // => ['active', 'loading']
  *
  */
 export const maker = (_, props) =>

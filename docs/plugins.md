@@ -16,12 +16,12 @@ This maker is independent of the value of passed props.
 
 **Example**  
 ```js
-import makeBlock from 'dumb-bem/plugins/makeBlock';
+import * as pluginBlock from 'dumb-bem/plugins/makeBlock'
 
-makeBlock('block', {});
+pluginBlock.maker('block', {})
   // => 'block'
 
-makeBlock('block__element', {});
+pluginBlock.maker('block__element', {})
   // => 'block__element'
 ```
 <a name="module_makeModifiers"></a>
@@ -35,13 +35,16 @@ Separate multiple modifiers by whitespace.
 
 **Example**  
 ```js
-import makeModifiers from 'dumb-bem/plugins/makeModifiers';
+import * as pluginModifiers from 'dumb-bem/plugins/makeModifiers'
 
-makeModifiers('block', { modifier: 'large' });
+pluginModifiers.maker('block', { modifier: 'large' })
   // => 'block--large'
 
-makeModifiers('block', { modifier: 'large success' });
+pluginModifiers.maker('block', { modifier: 'large success' })
   // => 'block--large block--success'
+
+pluginModifiers.propsToRemove
+  // => ['modifier']
 ```
 <a name="module_makeOriginalClass"></a>
 
@@ -55,9 +58,9 @@ This maker is independent of the value of `block`.
 
 **Example**  
 ```js
-import makeOriginalClass from 'dumb-bem/plugins/makeOriginalClass';
+import * as pluginOriginalClass from 'dumb-bem/plugins/makeOriginalClass'
 
-makeOriginalClass('block', { className: 'btn btn-lg btn-success' });
+pluginOriginalClass.maker('block', { className: 'btn btn-lg btn-success' })
   // => 'btn btn-lg btn-success'
 ```
 <a name="module_makeStates"></a>
@@ -75,10 +78,14 @@ This maker is independent of the value of `block`.
 
 **Example**  
 ```js
-import makeStates from 'dumb-bem/plugins/makeStates';
+import * as pluginStates from 'dumb-bem/plugins/makeStates'
 
-makeStates('block', { active: true });
+pluginStates.maker('block', { active: true })
   // => 'is-active'
-makeStates('block', { active: 0, disabled: 1 });
+
+pluginStates.maker('block', { active: 0, disabled: 1 })
   // => 'is-disabled'
+
+pluginStates.propsToRemove
+  // => ['active', 'loading']
 ```
