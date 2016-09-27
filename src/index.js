@@ -1,20 +1,26 @@
 import cx from 'classnames'
 
-import makeBlock from './makers/makeBlock'
-import makeModifiers from './makers/makeModifiers'
-import makeOriginalClass from './makers/makeOriginalClass'
-import makeStates from './makers/makeStates'
+import * as pluginBlock from './plugins/makeBlock'
+import * as pluginModifiers from './plugins/makeModifiers'
+import * as pluginOriginalClass from './plugins/makeOriginalClass'
+import * as pluginStates from './plugins/makeStates'
 
-const basicMakers = [makeBlock, makeOriginalClass, makeModifiers, makeStates]
+import filterObject from './filter-object'
+
+const basicPlugins = [pluginBlock, pluginModifiers, pluginOriginalClass, pluginStates]
 
 export default (block, options = {}) => (props) => {
-  const { extraMakers = [] } = options
-  const { element } = props
+  const { plugins = [] } = options
+  const { element, ...restProps } = props
   const blockName = block + (element ? `__${element}` : '')
 
-  const makers = basicMakers
-    .concat(extraMakers)
-    .map((maker) => maker(blockName, props))
+  const pluginsList = basicPlugins.concat(plugins)
 
-  return { ...props, className: cx(makers) }
+  const makers = pluginsList.map(plugin => plugin.maker)
+  const propsToRemove = pluginsList.map(plugin => plugin.propsToRemove)
+
+  const classNames = makers.map(maker => maker(blockName, props))
+  const knownProps = filterObject(restProps, propsToRemove)
+
+  return { ...knownProps, className: cx(classNames) }
 }

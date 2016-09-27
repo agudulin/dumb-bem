@@ -10,14 +10,29 @@ import dumbBem from '../'
 
 expect.extend(expectJSX)
 
-const dumbBemHeader = dumbBem('header')
-const justClass = (props) => dumbBemHeader(props).className.trim()
+const dumbHeader = dumbBem('header')
+const justClass = (props) => dumbHeader(props).className.trim()
+
+test('should cleanup unknown properties', (t) => {
+  const dumbHeader = dumbBem('header', {
+    extraPlugins: [{
+      maker: (_, { invisible }) => invisible && 'is-invisible',
+      propsToRemove: ['invisible']
+    }]
+  })
+  const props = dumbHeader({ active: true, loading: true, modifier: 'landing' })
+
+  t.false('active' in props)
+  t.false('invisible' in props)
+  t.false('loading' in props)
+  t.false('modifier' in props)
+})
 
 test('should return `header` block', (t) => {
   const renderer = createRenderer()
 
-  const dumbBemHeader = dumbBem('header')
-  const Header = tx(dumbBemHeader)('header')
+  const dumbHeader = dumbBem('header')
+  const Header = tx(dumbHeader)('header')
 
   renderer.render(
     React.createElement(Header, null)
@@ -47,14 +62,14 @@ test('should return `header` block with multiple modifiers', (t) => {
 test('should return `header` block with modifier and custom className', (t) => {
   t.is(
     justClass({ modifier: 'landing', className: 'js-header' }),
-    'header js-header header--landing'
+    'header header--landing js-header'
   )
 })
 
 test('should return `header` block with multiple modifiers and custom className', (t) => {
   t.is(
     justClass({ modifier: 'landing landing-seo', className: 'js-header' }),
-    'header js-header header--landing header--landing-seo'
+    'header header--landing header--landing-seo js-header'
   )
 })
 

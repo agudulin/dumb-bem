@@ -11,13 +11,13 @@
  *
  * @example
  *
- * import makeBlock from 'dumb-bem/makers/makeBlock';
+ * import * as pluginBlock from 'dumb-bem/plugins/makeBlock'
  *
- * makeBlock('block', {});
+ * pluginBlock.maker('block', {})
  *   // => 'block'
  *
- * makeBlock('block__element', {});
+ * pluginBlock.maker('block__element', {})
  *   // => 'block__element'
  *
  */
-export default (block, _) => block
+export const maker = (block, _) => block

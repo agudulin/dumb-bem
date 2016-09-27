@@ -11,14 +11,19 @@
  *
  * @example
  *
- * import makeModifiers from 'dumb-bem/makers/makeModifiers';
+ * import * as pluginModifiers from 'dumb-bem/plugins/makeModifiers'
  *
- * makeModifiers('block', { modifier: 'large' });
+ * pluginModifiers.maker('block', { modifier: 'large' })
  *   // => 'block--large'
  *
- * makeModifiers('block', { modifier: 'large success' });
+ * pluginModifiers.maker('block', { modifier: 'large success' })
  *   // => 'block--large block--success'
  *
+ * pluginModifiers.propsToRemove
+ *   // => ['modifier']
+ *
  */
-export default (block, { modifier }) =>
+export const maker = (block, { modifier }) =>
   modifier && modifier.split(/\s+/).map((item) => `${block}--${item}`)
+
+export const propsToRemove = ['modifier']

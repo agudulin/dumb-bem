@@ -4,7 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 
 ## Unreleased - 2016-xx-xx
 ### Add options
-- **Breaking** Enable further customisation via options. Move `extraMakers` to options.
+- **Breaking** Enable further customisation via options.
+- Introduce plugins for changing class names (ex `extraMakers`) and removing custom props from DOM elements.
 
 ## 1.1.1 - 2016-09-01
 ### Fix tests
