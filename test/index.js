@@ -15,7 +15,7 @@ const justClass = (props) => dumbHeader(props).className.trim()
 
 test('should cleanup unknown properties', (t) => {
   const dumbHeader = dumbBem('header', {
-    plugins: [{
+    extraPlugins: [{
       maker: (_, { invisible }) => invisible && 'is-invisible',
       propsToRemove: ['invisible']
     }]
