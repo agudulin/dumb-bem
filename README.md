@@ -97,7 +97,7 @@ ReactDOM.render(
 // </ul>
 ```
 
-### [Built-in Makers](docs/makers.md)
+### [Built-in Plugins](docs/plugins.md)
 
 
 ## License
