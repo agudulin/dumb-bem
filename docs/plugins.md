@@ -37,11 +37,11 @@ Separate multiple modifiers by whitespace.
 ```js
 import * as pluginModifiers from 'dumb-bem/plugins/makeModifiers'
 
-pluginModifiers.maker('block', { modifier: 'large' })
+pluginModifiers.maker('block', { modifier: 'large' }, { delimiters: { modifier: '--' } })
   // => 'block--large'
 
-pluginModifiers.maker('block', { modifier: 'large success' })
-  // => 'block--large block--success'
+pluginModifiers.maker('block', { modifier: 'large success' }, { delimiters: { modifier: '_' } })
+  // => 'block_large block_success'
 
 pluginModifiers.propsToRemove
   // => ['modifier']
@@ -60,7 +60,7 @@ This maker is independent of the value of `block`.
 ```js
 import * as pluginOriginalClass from 'dumb-bem/plugins/makeOriginalClass'
 
-pluginOriginalClass.maker('block', { className: 'btn btn-lg btn-success' })
+pluginOriginalClass.maker('block', { className: 'btn btn-lg btn-success' }, {})
   // => 'btn btn-lg btn-success'
 ```
 <a name="module_makeStates"></a>
@@ -80,10 +80,10 @@ This maker is independent of the value of `block`.
 ```js
 import * as pluginStates from 'dumb-bem/plugins/makeStates'
 
-pluginStates.maker('block', { active: true })
+pluginStates.maker('block', { active: true }, {})
   // => 'is-active'
 
-pluginStates.maker('block', { active: 0, disabled: 1 })
+pluginStates.maker('block', { active: 0, disabled: 1 }, {})
   // => 'is-disabled'
 
 pluginStates.propsToRemove

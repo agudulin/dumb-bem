@@ -14,8 +14,8 @@
  *
  * import * as pluginOriginalClass from 'dumb-bem/plugins/makeOriginalClass'
  *
- * pluginOriginalClass.maker('block', { className: 'btn btn-lg btn-success' })
+ * pluginOriginalClass.maker('block', { className: 'btn btn-lg btn-success' }, {})
  *   // => 'btn btn-lg btn-success'
  *
  */
-export const maker = (_, { className }) => className
+export const maker = (block, { className }, options) => className

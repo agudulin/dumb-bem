@@ -52,6 +52,21 @@ test('should render `header` block with modifier', (t) => {
   )
 })
 
+test('should render `header` block with custom delimiterss', (t) => {
+  const dumbHeader = dumbBem('header', {
+    delimiters: {
+      element: '🐶',
+      modifier: '🐱'
+    }
+  })
+  const className = dumbHeader({ element: 'title', modifier: 'landing' }).className.trim()
+
+  t.is(
+    className,
+    'header🐶title header🐶title🐱landing'
+  )
+})
+
 test('should return `header` block with multiple modifiers', (t) => {
   t.is(
     justClass({ modifier: 'landing landing-seo' }),
