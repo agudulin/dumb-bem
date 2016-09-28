@@ -2,7 +2,7 @@ import test from 'ava'
 
 import filterObject from '../lib/filter-object'
 
-test('should work', (t) => {
+test('should remove keys from the object properly', (t) => {
   const obj = { a: 1, b: 2, c: 3 }
   const keysToRemove = ['b', 'c']
 
