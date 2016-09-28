@@ -14,9 +14,9 @@
  *
  */
 export default (obj, keysToRemove = []) => {
-  var target = {}
+  const target = {}
 
-  for (var i in obj) {
+  for (let i in obj) {
     if (keysToRemove.indexOf(i) >= 0) continue
     if (!Object.prototype.hasOwnProperty.call(obj, i)) continue
 
