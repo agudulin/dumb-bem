@@ -21,7 +21,10 @@ export default (block, options = {}) => (props) => {
   const pluginsList = basicPlugins.concat(plugins)
 
   const makers = pluginsList.map(plugin => plugin.maker)
-  const propsToRemove = pluginsList.map(plugin => plugin.propsToRemove)
+  const propsToRemove = pluginsList
+    .map(plugin => plugin.propsToRemove)
+    .filter(a => a)
+    .reduce((a, b) => a.concat(b), [])
 
   const classNames = makers.map(maker => maker(blockName, props, { delimiters }))
   const knownProps = filterObject(restProps, propsToRemove)

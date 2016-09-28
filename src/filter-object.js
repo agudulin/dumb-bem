@@ -14,15 +14,14 @@
  *
  */
 export default (obj, keysToRemove = []) => {
-  const filteredKeys = Object.keys(obj).filter(key => {
-    if (keysToRemove.indexOf(key) >= 0) return false
-    if (Object.prototype.hasOwnProperty.call(obj, key)) return false
+  var target = {}
 
-    return true
-  })
+  for (var i in obj) {
+    if (keysToRemove.indexOf(i) >= 0) continue
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue
 
-  const target = {}
-  filteredKeys.forEach(key => { target[key] = obj[key] })
+    target[i] = obj[i]
+  }
 
   return target
 }
