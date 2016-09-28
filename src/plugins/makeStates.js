@@ -27,7 +27,7 @@
  *   // => ['active', 'loading']
  *
  */
-export const maker = (_block, props, _options) =>
+export const maker = (block, props, options) =>
   ['active', 'disabled', 'hidden', 'loading']
     .filter((s) => props[s])
     .map((s) => `is-${s}`)

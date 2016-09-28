@@ -18,4 +18,4 @@
  *   // => 'btn btn-lg btn-success'
  *
  */
-export const maker = (_block, { className }, _options) => className
+export const maker = (block, { className }, options) => className
