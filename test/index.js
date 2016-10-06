@@ -15,12 +15,12 @@ const justClass = (props) => dumbHeader(props).className.trim()
 
 test('should cleanup unknown properties', (t) => {
   const dumbHeader = dumbBem('header', {
-    extraPlugins: [{
+    plugins: [{
       maker: (_, { invisible }) => invisible && 'is-invisible',
       propsToRemove: ['invisible']
     }]
   })
-  const props = dumbHeader({ active: true, loading: true, modifier: 'landing' })
+  const props = dumbHeader({ active: true, invisible: true, loading: true, modifier: 'landing' })
 
   t.false('active' in props)
   t.false('invisible' in props)
