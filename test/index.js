@@ -6,20 +6,20 @@ import React from 'react'
 import { createRenderer } from 'react-addons-test-utils'
 import tx from 'transform-props-with'
 
-import dumbBem from '../'
+import dumbBem from '../lib'
+import { makeStates } from '../lib/plugins'
 
 expect.extend(expectJSX)
 
-const dumbHeader = dumbBem('header')
+const dumbHeader = dumbBem('header', { plugins: [makeStates] })
 const justClass = (props) => dumbHeader(props).className.trim()
 
 test('should cleanup unknown properties', (t) => {
-  const dumbHeader = dumbBem('header', {
-    plugins: [{
-      maker: (_, { invisible }) => invisible && 'is-invisible',
-      propsToRemove: ['invisible']
-    }]
-  })
+  const makeInvisible = {
+    maker: (_, { invisible }) => invisible && 'is-invisible',
+    propsToRemove: ['invisible']
+  }
+  const dumbHeader = dumbBem('header', { plugins: [makeStates, makeInvisible] })
   const props = dumbHeader({ active: true, invisible: true, loading: true, modifier: 'landing' })
 
   t.false('active' in props)
@@ -41,7 +41,7 @@ test('should return `header` block', (t) => {
     renderer.getRenderOutput()
   )
   .toEqualJSX(
-    React.createElement('header', { className: 'header ' })
+    React.createElement('header', { className: 'header' })
   )
 })
 

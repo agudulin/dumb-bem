@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## Unreleased - 2016-xx-xx
+### Make SMACSS states optional
+- Make `makeStates` plugin optional
+
 ## 2.0.0 - 2016-09-28
 ### Add options
 - **Breaking**: Enable further customisation via options.
