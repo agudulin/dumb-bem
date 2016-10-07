@@ -68,9 +68,41 @@ A function which takes `props` object as a parameter, transforms `className` pro
 
 #### Examples
 
-**User maker function**
+**Use built-in maker function**
 
 ```js
+import dumbBem from 'dumb-bem'
+import { makeStates } from 'dumb-bem/plugins'
+import tx from 'transform-props-with'
+
+const dumbList = dumbBem('list', { plugins: [makeStates] })
+const List = tx(dumbList)('ul')
+const ListItem = tx([{ element: 'item' }, dumbList])('li')
+
+ReactDOM.render(
+  <List>
+    <ListItem active={true}>Item 1</ListItem>
+    <ListItem disabled={true}>Item 2</ListItem>
+    <ListItem hidden={true}>Item 3</ListItem>
+    <ListItem loading={true}>Item 4</ListItem>
+  </List>
+, node)
+
+// Would render:
+// <ul class='list'>
+//   <li class='list__item is-active'>Item 1</li>
+//   <li class='list__item is-disabled'>Item 2</li>
+//   <li class='list__item is-hidden'>Item 3</li>
+//   <li class='list__item is-loading'>Item 4</li>
+// </ul>
+```
+
+**Use custom maker function**
+
+```js
+import dumbBem from 'dumb-bem'
+import tx from 'transform-props-with'
+
 const colorModifierPlugin = {
   maker: (block, props) => {
     if (props.color) {
@@ -90,6 +122,7 @@ ReactDOM.render(
     <ListItem color='white'>Item 2</ListItem>
   </List>
 , node)
+
 // Would render:
 // <ul class='list'>
 //   <li class='list__item list__item--black'>Item 1</li>

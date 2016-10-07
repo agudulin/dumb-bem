@@ -3,11 +3,10 @@ import cx from 'classnames'
 import * as pluginBlock from './plugins/makeBlock'
 import * as pluginModifiers from './plugins/makeModifiers'
 import * as pluginOriginalClass from './plugins/makeOriginalClass'
-import * as pluginStates from './plugins/makeStates'
 
 import filterObject from './filter-object'
 
-const basicPlugins = [pluginBlock, pluginModifiers, pluginOriginalClass, pluginStates]
+const basicPlugins = [pluginBlock, pluginModifiers, pluginOriginalClass]
 const defaultDelimiters = {
   element: '__',
   modifier: '--'
