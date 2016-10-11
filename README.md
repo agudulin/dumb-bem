@@ -50,7 +50,7 @@ ReactDOM.render(
       Plugin is an object with two properties:
         - `maker` (*function*)
         Maker function takes `block` and `props` as arguments and should return anything suitable for [classnames](https://www.npmjs.com/package/classnames) input. E.g. [it can be a string, array of string or object](https://github.com/JedWatson/classnames#usage).
-        - [`propsToRemove`] (*Array*)
+        - [`propsToRemove`] \(*Array*)
         An array of properties which are used in the plugin but should not be injected into the corresponding DOM element in the end.
 
       See also [built-in makers](docs/plugins.md).
