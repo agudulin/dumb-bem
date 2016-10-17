@@ -108,10 +108,3 @@ test('should return `foo` block with modifiers', (t) => {
     'header is-active is-disabled is-hidden is-loading'
   )
 })
-
-test('should return `foo` block with modifiers', (t) => {
-  t.is(
-    justClass({ active: true, disabled: true, hidden: true, loading: true }),
-    'header is-active is-disabled is-hidden is-loading'
-  )
-})
