@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 3.0.1 - 2016-10-17
+### Fix documentation and tests, introduce yarn
+- Migrate to [yarn](https://github.com/yarnpkg/yarn)
+- Fix typos in README, update badge colors
+- Remove unecessary test case
+- Add verbose flag to ava CLI
+
 ## 3.0.0 - 2016-10-07
 ### Make SMACSS states optional
 - Make `makeStates` plugin optional
