@@ -40,7 +40,7 @@
     "docs": "jsdoc2md --module-index-format grouped src/plugins/*.js > docs/plugins.md",
     "transpile": "babel src -d lib",
     "pretest": "npm run transpile",
-    "test": "standard && ava",
+    "test": "standard && ava -v",
     "prepush": "npm test && npm run docs",
     "prepublish": "npm run transpile",
     "postpublish": "rimraf index.es5.js"
