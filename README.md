@@ -73,7 +73,7 @@ A function which takes `props` object as a parameter, transforms `className` pro
 
 ```js
 import dumbBem from 'dumb-bem'
-import { makeStates } from 'dumb-bem/plugins'
+import { makeStates } from 'dumb-bem/lib/plugins'
 import tx from 'transform-props-with'
 
 const dumbList = dumbBem('list', { plugins: [makeStates] })
