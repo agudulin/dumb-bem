@@ -24,7 +24,7 @@
  *
  */
 export const maker = (block, { modifier = '' }, { delimiters }) => {
-  const mod = modifier.trim()
+  const mod = modifier && modifier.trim()
 
   return mod && mod.split(/\s+/).map(item => `${block}${delimiters.modifier}${item}`)
 }
