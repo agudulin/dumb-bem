@@ -88,6 +88,13 @@ test('should return `header` block without empty modifier', (t) => {
   )
 })
 
+test('should return `header` block without nullable modifier', (t) => {
+  t.is(
+    justClass({ modifier: null }),
+    'header'
+  )
+})
+
 test('should return `header` block with trimmed modifier', (t) => {
   t.is(
     justClass({ modifier: '  landing ' }),
