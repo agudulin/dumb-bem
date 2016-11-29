@@ -81,6 +81,20 @@ test('should return `header` block with modifier and custom className', (t) => {
   )
 })
 
+test('should return `header` block without empty modifier', (t) => {
+  t.is(
+    justClass({ modifier: ' ' }),
+    'header'
+  )
+})
+
+test('should return `header` block with trimmed modifier', (t) => {
+  t.is(
+    justClass({ modifier: '  landing ' }),
+    'header header--landing'
+  )
+})
+
 test('should return `header` block with multiple modifiers and custom className', (t) => {
   t.is(
     justClass({ modifier: 'landing landing-seo', className: 'js-header' }),
