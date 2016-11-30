@@ -23,10 +23,10 @@
  *   // => ['modifier']
  *
  */
-export const maker = (block, { modifier = '' }, { delimiters }) => {
-  const mod = modifier && modifier.trim()
-
-  return mod && mod.split(/\s+/).map(item => `${block}${delimiters.modifier}${item}`)
-}
+export const maker = (block, { modifier = '' }, { delimiters }) =>
+  modifier && modifier
+    .split(/\s+/)
+    .filter(x => x)
+    .map(item => `${block}${delimiters.modifier}${item}`)
 
 export const propsToRemove = ['modifier']
