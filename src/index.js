@@ -5,6 +5,7 @@ import * as pluginModifiers from './plugins/makeModifiers'
 import * as pluginOriginalClass from './plugins/makeOriginalClass'
 
 import filterObject from './filter-object'
+import trimClassName from './trim-class-name'
 
 const basicPlugins = [pluginBlock, pluginModifiers, pluginOriginalClass]
 const defaultDelimiters = {
@@ -26,7 +27,7 @@ export default (block, options = {}) => (props) => {
     .reduce((a, b) => a.concat(b), [])
 
   const classNamesList = makers.map(maker => maker(blockName, props, { delimiters }))
-  const className = cx(classNamesList).trim().replace(/\s\s+/g, ' ')
+  const className = trimClassName(cx(classNamesList))
 
   const knownProps = filterObject(restProps, propsToRemove)
 
