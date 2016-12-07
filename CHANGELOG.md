@@ -3,8 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## UNRELEASED - XXXX-XX-XX
-### Refactor `makeModifiers` plugin
-- Cleanup the code
+### Remove unnecessary whitespaces from a class name
+- Refactor `makeModifiers` plugin to cleanup the code
 
 ## 3.1.1 - 2016-11-29
 ### Fix `makeModifiers` plugin
