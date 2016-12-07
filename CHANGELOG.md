@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## UNRELEASED - XXXX-XX-XX
+## 3.2.0 - 2016-12-07
 ### Remove unnecessary whitespaces from a class name
 - Refactor `makeModifiers` plugin to cleanup the code
 
