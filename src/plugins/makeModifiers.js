@@ -11,7 +11,7 @@
  *
  * @example
  *
- * import * as pluginModifiers from 'dumb-bem/plugins/makeModifiers'
+ * import * as pluginModifiers from 'dumb-bem/lib/plugins/makeModifiers'
  *
  * pluginModifiers.maker('block', { modifier: 'large' }, { delimiters: { modifier: '--' } })
  *   // => 'block--large'

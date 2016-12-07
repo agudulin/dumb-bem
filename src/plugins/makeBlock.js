@@ -11,7 +11,7 @@
  *
  * @example
  *
- * import * as pluginBlock from 'dumb-bem/plugins/makeBlock'
+ * import * as pluginBlock from 'dumb-bem/lib/plugins/makeBlock'
  *
  * pluginBlock.maker('block', {})
  *   // => 'block'
