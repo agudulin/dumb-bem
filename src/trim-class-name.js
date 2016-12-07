@@ -7,7 +7,7 @@
  *
  * @example
  *
- * import trimClassName from 'dumb-bem/trim-class-name'
+ * import trimClassName from 'dumb-bem/lib/trim-class-name'
  *
  * trimClassName(' header  header--landing ')
  *   // => 'header header--landing'

@@ -15,7 +15,7 @@
  *
  * @example
  *
- * import * as pluginStates from 'dumb-bem/plugins/makeStates'
+ * import * as pluginStates from 'dumb-bem/lib/plugins/makeStates'
  *
  * pluginStates.maker('block', { active: true }, {})
  *   // => 'is-active'

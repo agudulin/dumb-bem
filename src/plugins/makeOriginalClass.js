@@ -12,7 +12,7 @@
  *
  * @example
  *
- * import * as pluginOriginalClass from 'dumb-bem/plugins/makeOriginalClass'
+ * import * as pluginOriginalClass from 'dumb-bem/lib/plugins/makeOriginalClass'
  *
  * pluginOriginalClass.maker('block', { className: 'btn btn-lg btn-success' }, {})
  *   // => 'btn btn-lg btn-success'

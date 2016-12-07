@@ -7,7 +7,7 @@
  *
  * @example
  *
- * import filterObject from 'dumb-bem/filter-object'
+ * import filterObject from 'dumb-bem/lib/filter-object'
  *
  * filterObject({ a: 1, b: 2, c: 3}, ['a', 'b'])
  *   // => { c: 3 }
