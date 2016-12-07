@@ -12,7 +12,7 @@ import { makeStates } from '../lib/plugins'
 expect.extend(expectJSX)
 
 const dumbHeader = dumbBem('header', { plugins: [makeStates] })
-const justClass = (props) => dumbHeader(props).className.trim()
+const justClass = (props) => dumbHeader(props).className
 
 test('should cleanup unknown properties', (t) => {
   const makeInvisible = {

@@ -25,8 +25,10 @@ export default (block, options = {}) => (props) => {
     .filter(a => a)
     .reduce((a, b) => a.concat(b), [])
 
-  const classNames = makers.map(maker => maker(blockName, props, { delimiters }))
+  const classNamesList = makers.map(maker => maker(blockName, props, { delimiters }))
+  const className = cx(classNamesList).trim().replace(/\s\s+/g, ' ')
+
   const knownProps = filterObject(restProps, propsToRemove)
 
-  return { ...knownProps, className: cx(classNames) }
+  return { ...knownProps, className }
 }
